@@ -1,0 +1,9 @@
+
+* {
+    box-sizing: border-box;
+}
+header {
+    font-size: xx-large;
+    color: blue;
+    text-align: center;
+}
