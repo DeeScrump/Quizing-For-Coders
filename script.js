@@ -1,11 +1,10 @@
-var startQuiz = document.querySelector(".startQuiz");
+// var startQuiz = document.querySelector(".startQuiz");
+var timeCountDown = document.querySelector(".timer_counter");
 var timer;
 var timerCounter;
 var correct;
 var incorrect;
-var quizContainer = document.getElementById("quizQuestions");
-var resultsContainer = document.getElementById("results");
-var startButton = document.getElementById("startQuiz");
+var startButton = document.querySelector(".startQuiz");
 
 //The init function is called to upload any stored High Score
 function init() {
@@ -13,22 +12,37 @@ function init() {
 }
 
 function startQuiz() {
-
+    timerCounter = 3;
+    console.log("start quiz time");
+    startTimer()
 }
 //click the startQuiz button to start the game
-function timer() {
-    timerCounter = 75;
-    if (timerCounter !== 0) {
-        timerCounter--;
-    } else if (timerCounter === 0) {
-        window.open("initials.html")
-    } else {
-        return;
+    function startTimer () {
+        countDown = setInterval(function() {
+            timerCounter--;
+            timeCountDown.textContent = timerCounter;
+            if (timerCounter === 0) {
+                clearInterval(countDown);
+                window.open("initials.html","_self");
+            }
+        }, 1000);    
     }
 
-    }
+startButton.addEventListener("click", startQuiz);
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var listOfQuestions = [ 
     {
@@ -61,4 +75,3 @@ var listOfQuestions = [
 }
 ]
 
-startButton.addEventListener("click", timer);
