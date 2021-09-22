@@ -3,19 +3,35 @@ var timer;
 var timerCounter;
 var correct;
 var incorrect;
+var quizContainer = document.getElementById("quizQuestions");
+var resultsContainer = document.getElementById("results");
+var startButton = document.getElementById("startQuiz");
 
 //The init function is called to upload any stored High Score
 function init() {
     getHighScores();
 }
 
+function startQuiz() {
+
+}
 //click the startQuiz button to start the game
-function startQuiz {
+function timer() {
     timerCounter = 75;
+    if (timerCounter !== 0) {
+        timerCounter--;
+    } else if (timerCounter === 0) {
+        window.open("initials.html")
+    } else {
+        return;
+    }
+
+    }
 
 }
 
-var listOfQuestions = [ {
+var listOfQuestions = [ 
+    {
     question: "Who invented JavaScript?",
     answers: {
       a: "Douglas Crockford",
@@ -44,3 +60,5 @@ var listOfQuestions = [ {
     correctAnswer: "d"
 }
 ]
+
+startButton.addEventListener("click", timer);
