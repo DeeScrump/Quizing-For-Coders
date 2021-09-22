@@ -1,9 +1,26 @@
 
 * {
     box-sizing: border-box;
+    text-align: center;
 }
 header {
-    font-size: xx-large;
+    font-size: 50px;
     color: blue;
     text-align: center;
+    padding-bottom: 30px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    border: 20px blue;
+}
+
+li {
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
 }
