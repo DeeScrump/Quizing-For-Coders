@@ -1,77 +1,42 @@
-// var startQuiz = document.querySelector(".startQuiz");
 var timeCountDown = document.querySelector(".timer_counter");
+var startButton = document.querySelector(".startQuiz");
 var timer;
 var timerCounter;
 var correct;
 var incorrect;
-var startButton = document.querySelector(".startQuiz");
 
 //The init function is called to upload any stored High Score
-function init() {
-    getHighScores();
-}
+// function init() {
+//     getHighScores();
+// }
 
+//This starts the quiz itself
 function startQuiz() {
-    timerCounter = 3;
-    console.log("start quiz time");
-    startTimer()
+    window.open("questions.html","_self");
+    // timerCounter = 10;
+    // console.log("start quiz time");
+    // startTimer();
+    // jumpToQuestions();
 }
-//click the startQuiz button to start the game
-    function startTimer () {
-        countDown = setInterval(function() {
-            timerCounter--;
-            timeCountDown.textContent = timerCounter;
-            if (timerCounter === 0) {
-                clearInterval(countDown);
-                window.open("initials.html","_self");
-            }
-        }, 1000);    
-    }
 
-startButton.addEventListener("click", startQuiz);
+// startButton.addEventListener("click", startQuiz);
 
+// function startTimer() {
+//     window.open("questions.html","_self");
+// }
 
+//The timer interval that countdowns and return to page for score and initials input
+// function startTimer () {
+//     countDown = setInterval(function() {
+//         timerCounter--;
+//         timeCountDown.textContent = timerCounter;
+//         if (timerCounter === 0) {
+//             clearInterval(countDown);
+//             window.open("initials.html","_self");
+//         } else if (timerCounter !==0) {
+//             console.log("wait");
+//         }
+//     }, 1000);
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-var listOfQuestions = [ 
-    {
-    question: "Who invented JavaScript?",
-    answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which one of these is a JavaScript package manager?",
-    answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which tool can you use to ensure code quality?",
-    answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint"
-    },
-    correctAnswer: "d"
-}
-]
 

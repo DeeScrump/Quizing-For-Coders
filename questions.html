@@ -18,30 +18,18 @@
                 <a href="./highscores.html" alt="High Scores Page">High Scores</a>
             </li>
             <li>
-                <p id="timer">Time: </p>
-                <p>75</p>
+                <p>Time: </p>
+                <p class="timer_counter">75</p>
             </li>
         </ul>
     </nav>
 
-    <header>
-        Test Your Knowledge
-    </header>
 
     <main>
-        <h1>
-            "Click start below to test your knowledge on some coding concepts. See if you can get the high score"
-        </h1>
-
-        <div class="centerStartButton">
-        <button onclick="startQuiz();">Start Quiz</button>
-        </div>
-
-        <div class="quizQuestions"></div>
-            
-        
+           <div id="quiz"></div>
+           <div id="results"></div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>
