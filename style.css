@@ -30,10 +30,8 @@ main button {
     width: auto;
 }
 
-section,
-.questions_card {
+main div {
     display: block;
-    border: 2px solid black;
     margin: auto;
     width: 25%;
 }

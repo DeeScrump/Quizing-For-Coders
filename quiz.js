@@ -1,3 +1,50 @@
+var keepScore = 0;
+var timeCountDown = document.querySelector(".timer_counter");
+// var displayQuestions = document.querySelector(".quiz");
+var timer;
+var timerCounter;
+
+
+function showQuestions(){
+  // variable to store the HTML output
+  var output = [];
+
+  // for each question...
+  listOfQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+
+      // variable to store the list of possible answers
+      var answers = [];
+
+      // and for each available answer...
+      for(letter in currentQuestion.answers){
+
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join('')} </div>`
+      );
+    }
+  );
+  // finally combine our output list into one string of HTML and put it on the page
+  quizContainer.innerHTML = output.join('');  
+}
+
+function showResults() {}
+
+var quizContainer = document.getElementById(".quiz");
+var resultsContainer = document.getElementById(".results");
+var submitButton = document.getElementById(".submit");
 var listOfQuestions = [
     {
     question: "Who invented JavaScript?",
@@ -26,20 +73,21 @@ var listOfQuestions = [
     },
     correctAnswer: "c"
 }
-]
-var keepScore = 0;
-var timeCountDown = document.querySelector(".timer_counter");
-var displayQuestions = document.querySelector(".questions_card");
-var timer;
-var timerCounter;
-var chosenQuestion = 0;
-var quizContainer = document.getElementById("quiz");
-var resultsContainer = document.getElementById("results");
+];
+
+
+showQuestions();
+
+submitButton.addEventListener("click", showResults);
+
+
+
 
 
 
 
 // loadQuestions();
+
 // //The init function is called to upload any stored High Score
 // function init() {
 //     getHighScores();
