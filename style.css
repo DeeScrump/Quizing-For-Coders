@@ -24,16 +24,27 @@ h1 {
     padding: 20px;
 }
 
-main button {
+.answers button {
+    display: block;
+    text-align: justify;
+}
+
+#submit {
     display: block;
     margin: auto;
-    width: auto;
+    background-color: grey;
 }
+
+.answers button:hover {
+    background-color: blueviolet;
+}
+
+
 
 main div {
     display: block;
     margin: auto;
-    width: 25%;
+    width: 50%;
 }
 
 .results {
